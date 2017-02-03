@@ -23,7 +23,7 @@ My profile
         <!-- Profile Image -->
         <div class="box box-primary">
           <div class="box-body box-profile">
-            <img class="profile-user-img img-responsive img-circle" src="@if(Auth::user()->avatar) {{url('/uploads')}}/{{Auth::user()->avatar}} @else {{url('/uploads/avatar')}}/default/avatar.jpg @endif" alt="User profile picture">
+            <img class="profile-user-img img-responsive img-circle" src="@if(Auth::user()->avatar) {{url('/uploads')}}/{{Auth::user()->avatar}} @else {{url('themes')}}/images/avatar/default/avatar.jpg @endif" alt="User profile picture">
             <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3>
 
             <p class="text-muted text-center">{{ Auth::user()->jobtitle }}</p>
@@ -71,7 +71,7 @@ My profile
             <!-- Post -->
             <div class="post">
               <div class="user-block">
-                <img class="img-circle img-bordered-sm" src="@if(Auth::user()->avatar) {{url('/uploads')}}/{{Auth::user()->avatar}} @else {{url('/uploads/avatar')}}/default/avatar.jpg @endif" alt="user image">
+                <img class="img-circle img-bordered-sm" src="@if(Auth::user()->avatar) {{url('/uploads')}}/{{Auth::user()->avatar}} @else {{url('themes')}}/images/avatar/default/avatar.jpg @endif" alt="user image">
                 <span class="username">
                   <a href="#">{{ Auth::user()->name }}</a>
                   <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>

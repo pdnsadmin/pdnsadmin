@@ -92,13 +92,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="@if(Auth::user()->avatar) {{url('/uploads')}}/{{Auth::user()->avatar}} @else {{url('/uploads/avatar')}}/default/avatar.jpg @endif" class="user-image" alt="User Image">
+              <img src="@if(Auth::user()->avatar) {{url('/uploads')}}/{{Auth::user()->avatar}} @else {{url('themes')}}/images/avatar/default/avatar.jpg @endif" class="user-image" alt="User Image">
               <span class="hidden-xs">{{ Auth::user()->name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="@if(Auth::user()->avatar) {{url('/uploads')}}/{{Auth::user()->avatar}} @else {{url('/uploads/avatar')}}/default/avatar.jpg @endif" class="img-circle" alt="User Image">
+                <img src="@if(Auth::user()->avatar) {{url('/uploads')}}/{{Auth::user()->avatar}} @else {{url('themes')}}/images/avatar/default/avatar.jpg @endif" class="img-circle" alt="User Image">
                 <p>
                   {{ Auth::user()->name }} 
                   @if(Auth::user()->jobtitle) 
