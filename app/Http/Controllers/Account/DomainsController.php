@@ -452,14 +452,6 @@ public function add_record(Request $request)
     $data['error_status']=1;
     echo json_encode($data);exit;
   }
-  if($this->count_record($id)>=15)
-  {
-    $msg='You are using your maximum allotment (15) of domain records. If you want more, contact your service provider.';
-    $data['error']=$msg;
-    $data['content']='';
-    $data['error_status']=1;
-    echo json_encode($data);exit;
-  }
   $domains                =   DB::table('domains')->where('id',$id)->first();
   $error=0;
     //review code before submited to server
