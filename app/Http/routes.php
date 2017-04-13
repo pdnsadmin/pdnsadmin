@@ -89,7 +89,7 @@ Route::get('synchronize/autocomplete', 'Settings\SynchronizeController@autocompl
 Route::post('synchronize/synctolocal', 'Settings\SynchronizeController@synctolocal')->middleware('auth');
 Route::post('synchronize/delete', 'Settings\SynchronizeController@delete')->middleware('auth');
 
-Route::get('users','User\UserController@index');
+Route::get('users','User\UserController@index')->middleware('auth');
 Route::group(['prefix' => 'user','namespace' => 'User','middleware'=>['auth']], function () {
 	//Route::get('/','UserController@index');
 	Route::get('/groups','GroupController@index');

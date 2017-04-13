@@ -62,7 +62,7 @@ if(!is_array($result))
         {
           return Redirect::to('/account/apiaccess');
         }
-
+$domain_api=array();
 foreach($result as $k=>$v)
 {
 	$domain_api[]=trim($v->name,'.');
