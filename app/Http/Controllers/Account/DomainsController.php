@@ -63,6 +63,7 @@ class DomainsController extends Controller
       $ttl              = $this->ttl;
       $domain=$request->input('domain');
       $result['error']='';
+
       if(!$this->validDomain($domain))
       {
         $result['error']='Please enter a valid domain name. For example novaweb.vn';	

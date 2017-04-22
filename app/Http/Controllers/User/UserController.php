@@ -214,31 +214,31 @@ public function add()
 		 {
 		 	exit("You don't have permission to delete this user");
 		 }
-		 $add_user 		 		=	new User;
-		 $id=intval($request->input('id'));
-		//echo $update;exit;
-		 $error=0;
-		 $permission = array();
-		 $now=date('Y-m-d h:s:i');
+		 $add_user 		 			=	new User;
+		 $id 						=	intval($request->input('id'));
+		 $error 					=	0;
+		 $permission 				= 	array();
+		 $now 						=	date('Y-m-d h:s:i');
 		 $add_user->name 			=	$request->input('name');
 		 $add_user->email 			=	$request->input('email');
 		 $add_user->username 		=	$request->input('email');
 		 $add_user->phone			=	$request->input('phone');
-		 $add_user->group_id			=	intval($request->input('group_id'));
-		 $add_user->jobtitle			= 	$request->input('jobtitle');
+		 $add_user->group_id		=	intval($request->input('group_id'));
+		 $add_user->jobtitle		= 	$request->input('jobtitle');
 		 $add_user->biography		= 	$request->input('biography');
 		 $add_user->is_root			=	intval($request->input('isroot'));
 		 $add_user->signature		= 	$request->input('signature');
 		 $add_user->location			= 	$request->input('location');
 		 $add_user->overview			= 	$request->input('overview');
 		 $add_user->notes			= 	$request->input('notes');
-		 if($request->input('group_id')<=0):
-		 	$data["permission"]='';
+		 $add_user->active			= 	1;//set active member
+		 if(intval($request->input('group_id'))<=0):
+		 	$permission=serialize($permission);
 		 else:
 		 	$groups = DB::table('usergroups')->where('id',intval($request->input('group_id')))->first();
-		 $permission = $groups->permission;
-		 $data["permission"]=$permission;
+		 	$permission = $groups->permission;
 		 endif;
+		 $add_user->permission 		=	$permission;
 		 $password 		=	$request->input('password');
 		 if(strlen($password)<6)
 		 {
@@ -247,8 +247,10 @@ public function add()
 		 }
 		 else
 		 {
-		 	$data['password']=bcrypt($password);    	
+		 	$password=bcrypt($password);   
+		 	$add_user->password 		=	$password;	 	
 		 } 	
+
 		 /*upload avarta*/
 		 $file = array('image' => Input::file('image'));
 		 if(Input::file('image')):
