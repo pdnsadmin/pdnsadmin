@@ -51,7 +51,7 @@ Setting
             </div>
           </div>
           <div class="clearfix"></div>
-          <div class="form-group">
+          <div class="form-group clearfix">
             <div class="col-sm-1">
               <button type="submit" class="btn btn-danger pull-right btn-block btn-sm">Save</button>
             </div>

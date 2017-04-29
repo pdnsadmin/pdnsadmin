@@ -53,7 +53,7 @@ Edit: {{ $users->name }}
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        User Profile
+        Edit User
       </h1>
       <ol class="breadcrumb">
         <li><a href="{{url('/account')}}"><i class="fa fa-dashboard"></i> Home</a></li>
